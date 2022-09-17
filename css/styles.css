@@ -1,0 +1,25 @@
+body{
+    margin: auto;
+    width: 800px;
+    font-family: sans-serif;
+    background-color: lightgray;
+}
+
+h1{
+    text-align: center;
+    font-size: 36pt;
+}
+
+h2{
+    text-transform: uppercase;
+    font-weight: 800;
+    color: darkred;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    padding: 8px;
+}
