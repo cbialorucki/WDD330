@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <h1>Week 1: Building a Portfolio</h1>
+    <section>
+        <h2>Notes</h2>
+
+        <h3>Chapter 2: Programming Basics</h3>
+        <ul>
+            <li>JS has C-style comments</li>
+            <li>C-style syntax</li>
+            <li>Minimize scope of variables whenever possible</li>
+            <li>Try making your variables constants at first, changing them to be mutable only if necessary</li>
+            <li>Avoid starting your variables with an underscore or cash sign, cash sign is used to start variables with popular libs and starting with an underscore conventionally means it's a private variable or method.</li>
+            <li>JS convention is to use camel case naming for variables</li>
+            <li>Backslash escapes characters, like C</li>
+            <li>Typescript helps to overcome the limitations of Javascript being a weak-typed language</li>
+        </ul>
+
+        <h3>Chapter 3: Arrays, Logic, and Loops</h3>
+        <ol>
+            <li>Arrays</li>
+            <ul>
+                <li>In JS, arrays can have many different types of objects</li>
+                <li>.push(), .pop(), .shift(), and .unshift() are all part of the JS array object</li>
+                <li>Array.splice(index, num of items to remove, [items]) lets you insert an array into another one at index and remove a specified number of items from the array, also at index.</li>
+                <li>The spread operator […] can be used to combine and flatten arrays. Ex: let thing = […foo, …bar];</li>
+            </ul>
+        </ol>
+        <ol>
+            <li>Sets</li>
+            <ul>
+                <li>Sets guarantee that no values are duplicated; they are a collection of unique values.</li>
+                <li>You can convert an array into a set with the following: let thing = new Set([1, 1, 2, 2, 3, 4, 5, 5]);</li>
+                <li>You can convert a set into an array using spread operator or Array.from() method. Ex: thing = […exampleSet] or thing = Array.from(exampleSet)</li>
+                <li>You can strip duplicates from arrays like this: thing = […new Set(oldArray)];</li>
+                <li>A weak set is a set made up of objects that can be easily garbage collected when the object in the set is dereferenced.</li>
+            </ul>
+        </ol>
+        <ol>
+            <li>Maps</li>
+            <ul>
+                <li>List of key-value pairs</li>
+                <li>Maps can be converted into arrays in the same way as sets, with the spread operator or Array.from()</li>
+                <li>A weak map is a map made up of objects that can be easily garbage collected when the object in the map is dereferenced.</li>
+            </ul>
+        </ol>
+        <ol>
+            <li>Logic</li>
+            <ul>
+                <li>Ternary operator syntax: condition ? (code if true) : (code if false)</li>
+            </ul>
+        </ol>
+        <ol>
+            <li>Loops</li>
+            <ul>
+                <li>JS has all the standard loops other programming languages have; for each loops are for(x of y) in JS</li>
+            </ul>
+        </ol>
+        
+        <h3>Chapter 4: Functions</h3>
+        <ul>
+            <li>Functions are objects in JS, can be assigned to variables</li>
+            <li>To call a function that was assigned to a variable, invoke it with variableName();</li>
+            <li>Arguments are accessible in a function through explicitly defined variables (i.e. function f(x, y)), through the arguments object, or through the rest operator (ex. function f(…args)). The arguments object is obsolete, and should be replaced with the rest operator.</li>
+            <li>Default parameters works the same as other languages</li>
+            <li>In-line arrow functions are written as follows: (arg1, arg2) => arg1+arg2;</li>
+            <li>Longer arrow functions are written like this: (arg1, arg2) => { return arg1+arg2; }</li>
+            <li>In JS, functions can be called before they are declared in the code file</li>
+            <li>In JS, vars can be referred to before being declared, but will be undefined until assigned to; use let/const instead.</li>
+            <li>If you assign a function to a variable, you can't call the function through the variable until after it is assigned.</li>
+            <li>You can pass a function as an argument in another function</li>
+            <li>Another way to iterate through an array is: Array.forEach( (item,index) => console.log(`${item} is at index ${index}`);</li>
+            <li>Callbacks are used extensively with array manipulation, like other programming languages</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>I did not have any questions for this week. ES6 appears to have done a great job in modernizing JavaScript and giving it features I enjoy in other programming languages, like C#.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
