@@ -21,5 +21,12 @@ a{
 }
 
 li{
-    padding: 8px;
+    line-height: 200%;
+}
+
+.code{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    padding: 4px;
+    border-radius: 8px;
 }

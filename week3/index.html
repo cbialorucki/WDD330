@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 3 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <h1>Week 3: Objects, The DOM, and Events</h1>
+    <section>
+        <h2>Notes</h2>
+
+        <h3>Object methods, <span class="code">this</span></h3>
+        <ul>
+            <li>The <span class="code">this</span> keyword is used to refer to the current object within an object method, similar to <span class="code">this</span> in C#.</li>
+            <li>Anonymous functions' <span class="code">this</span> keyword calls the parents' <span class="code">this</span>.</li>
+            <li>In JS, for backwards compatibility, there is a strict and non-strict mode of the <span class="code">this</span> keyword. A strict <span class="code">this</span> acts the same as <span class="code">this</span> in other languages, but a non-strict <span class="code">this</span> will find the next-closest <span class="code">this</span> that belongs to a parent object.</li>
+        </ul>
+        <h3>Chapter 5: Objects</h3>
+        <ul>
+            <li>Objects in JS work similarly to other OOP languages</li>
+            <li>Object literals in JS can be created without creating a class</li>
+            <li>Bracket notation can be used to access a property (ex. <span class="code">object[result()];</span>)</li>
+            <li>Keys in JS can be programmatically defined like so: <span class="code">const foo = {[result()]: 'value'};</span></li>
+            <li>Symbols can be used as keys for an object</li>
+            <li>Methods can also be called with bracket notation (ex. <span class="code">object['function']();</span>)</li>
+            <li>You can check if a property or method exists using the <span class="code">in</span> keyword, checking if it does not equal <span class="code">undefined</span>, or using the <span class="code">hasOwnProperty()</span> method.</li>
+            <li>You can iterate through each property and method in a JS object by using a <span class="code">for in</span> loop.</li>
+            <li><span class="code">object.entries()</span> can be used to get an array of methods and properties.</li>
+            <li>Properties can be removed from an object using the <span class="code">delete</span> keyword.</li>
+            <li>In JS you can wrap a method in an object to namespace it</li>
+            <li>JSON is natively supported in JS and can be parsed into JS objects from a string or turned back into a string with the <span class="code">parse()</span> and <span class="code">stringify()</span> methods respectively.</li>
+            <li>The math and date classes built into JS work similarly to Java.</li>
+            <li>To use RegEx with JS, you need to create a <span class="code">RegExp</span> object with your pattern. No LINQ magic here.</li>
+            <li>To see if a string matches a RegEx pattern, use <span class="code">RegExp.test(string);</span></li>
+        </ul>
+        <h3>Chapter 6: Document Object Model</h3>
+        <ul>
+            <li>Basic DOM manipulation in JS is discussed here. I am already very familiar with the functions used with the document object to access nodes in a webpage.</li>
+            <li>Some legacy shortcuts I didn't know about:
+                <ul>
+                    <li><span class="code">document.body</span></li>
+                    <li><span class="code">document.images</span></li>
+                    <li><span class="code">document.links</span></li>
+                    <li><span class="code">document.anchors</span></li>
+                    <li><span class="code">document.forms</span></li>
+                </ul>
+            </li>
+            <li><span class="code">classList</span> lets the programmer add and remove CSS classes from nodes.</li>
+            <li><span class="code">getElementsByClassName()</span> and <span class="code">getElementsByTagName()</span> return live lists that hurt performance.</li>
+            <li>CSS can be added directly to a node using JS without classes, I struggle to think of how this could be good practice ever.</li>
+            <li>CSS properties are in camel case when access through JS</li>
+            <li>Alternatively, bracket notation can be used to access CSS properties (ex. <span class="code">node.style['font-family'] = 'sans';</span>)</li>
+            <li><span class="code">getComputedStyle(node)</span> will return a read-only list of the CSS properties that were changed on that node, whether through an inline style or by an external style sheet.</li>
+        </ul>
+        <h3>Chapter 7: Events</h3>
+        <ul>
+            <li>Event Listeners work similarly to C#</li>
+            <li>When a function is called from an event listener, an event object is passed into the function, similar to C#. The event object holds many different properties, including the node that called it and its position on the page in X, Y coordinates.</li>
+            <li>When you use an anonymous function with <span class="code">addEventListener()</span>, it will never be garbage collected. Only use an anonymous function if you intend to use it throughout the entire lifecycle of the page.</li>
+            <li><span class="code">preventDefault()</span> within a event handler will prevent the node from doing its default action.</li>
+            <li>Events will bubble up the document tree by default, similar to C#</li>
+            <li>Events can be captured instead from the root element down to the individual element by using <span class="code">addEventListener('eventType', eventHandler, true);</span></li>
+            <li>Events can be stopped from bubbling up by using <span class="code">event.stopPropagation();</span></li>
+            <li>Events can be assigned to a parent node and the <span class="code">event.target</span> property will be the individual element within the node that was acted upon. Can be good for dynamically created lists.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>No questions at this time. I didn't realize how many great features JavaScript later adopted from other programming languages.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
