@@ -1,4 +1,4 @@
-const pages = [["Week 1: Building a Portfolio", "week1"], ["Week 2: Programming Basics", "week2"]];
+const pages = [["Week 1: Building a Portfolio", "week1"], ["Week 2: Programming Basics", "week2"], ["Week 3: Objects, The DOM, and Events", "week3"]];
 let list = document.getElementsByTagName("ol")[0];
 pages.forEach(addPageToList);
 
