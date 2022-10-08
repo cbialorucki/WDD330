@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <h1>Week 4: Forms, OOP, and Modular JavaScript</h1>
+    <section>
+        <h2>Notes</h2>
+        <h3>Chapter 8: Forms</h3>
+        <ul>
+            <li><span class="code">let form = document.forms['elementId']</span> is an easy way to get a form from the DOM</li>
+            <li><span class="code">let element1 = form['elementId']</span> can be used to access elements within a form</li>
+            <li><span class="code">element1.value</span> will let you get the text from an input field</li>
+            <li>Use <span class="code">placeholder</span> attribute to use placeholder text</li>
+            <li>Common form controls
+              <ul>
+                <li><span class="code">input</span> (used for fields of many different types: passwords, one-line text fields, check boxes, file uploads, radio buttons, etc.)</li>
+                <li><span class="code">select</span> (equivalent to WPF combo box)</li>
+                <li><span class="code">textarea</span> (equivalent to WPF textbox)</li>
+                <li><span class="code">button</span> (self-explanatory)</li>
+              </ul>
+            </li>
+            <li>The <span class="code">autofocus</span> attribute will move focus to an input element when the page loads</li>
+            <li>The <span class="code">maxlength</span> attribute limits the number of characters in an input form</li>
+            <li>A default value for input can be set in JS or HTML (though the form <span class="code">reset()</span> function sets it to the HTML default)</li>
+            <li>An input element has a few different types that it can be set to
+              <ul>
+                <li>text</li>
+                <li>password</li>
+                <li>checkbox
+                  <ul>
+                    <li>To link checkboxes together, all checkbox elements must have the same <span class="code">name</span> attribute</li>
+                    <li>All checkboxes can be access by using <span class="code">form.nameOfCheckboxes</span></li>
+                    <li>Checkboxes have a <span class="code">checked</span> property to determine if it has been checked or not</li>
+                    <li>Checkboxes can be set programmatically in either JS or HTML.</li>
+                  </ul>
+                </li>
+                <li>radio
+                  <ul>
+                    <li>Like checkboxes, radio buttons need to have the same <span class="code">name</span> attribute to be linked together. You can also access them the same way as checkboxes with dot notation.</li>
+                    <li>The value of the radio group is equal to the value of the selected radio button</li>
+                    <li>Radio buttons' checked property can be set to true with JS, but will then set all other radio buttons in the group to false. A radio button can be checked by default using HTML.</li>
+                  </ul>
+                </li>
+                <li>hidden
+                  <ul>
+                    <li>Usually used to pass user settings or non-sensitive information to the backend. It's in plaintext, not encrypted, and easily manipulated by pen-testers, so don't use it for anything too important.</li>
+                  </ul>
+                </li>
+                <li>file
+                  <ul>
+                    <li>Used to upload files</li>
+                  </ul>
+                </li>
+                <li>email, search, url, and tel
+                  <ul>
+                    <li>These types all look like a text field, but change the virtual keyboard and give free input validation depending on the type (still validate input on the backend)</li>
+                  </ul>
+                </li>
+                <li>number
+                  <ul>
+                    <li>This looks like a text field and does change the virtual keyboard, but adds a way to increment values by a step. Use tel for things like zip codes or other numbers that don't make sense to increment.</li>
+                    <li>Has attributes <span class="code">min</span>, <span class="code">max</span>, and <span class="code">step</span></li>
+                  </ul>
+                </li>
+                <li>color
+                  <ul>
+                    <li>This is a color picker, returns its hex code</li>
+                  </ul>
+                </li>
+                <li>range
+                  <ul>
+                    <li>This is a slider</li>
+                  </ul>
+                </li>
+                <li>datetime-local, month, time, week, date
+                  <ul>
+                    <li>These are for picking dates</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><span class="code">select</span> is used similarly to a combo box, add the multiple attribute to allow the user to select more than one option
+              <ul>
+                <li>It has <span class="code">selectedIndex</span> and <span class="code">value</span> to get the value(s) selected</li>
+              </ul>
+            </li>
+            <li><span class="code">textarea</span> works like a text box. Initial value can be set in JS or in the tag in HTML</li>
+            <li><span class="code">button</span> can have a type of either <span class="code">submit</span>, <span class="code">reset</span>, or <span class="code">button</span>.</li>
+            <li>The <span class="code">required</span> attribute can be applied to any form element, and the page will not submit the request until it is filled out properly.</li>
+            <li>You can validate form input using JS and the <span class="code">event.preventDefault()</span> method</li>
+            <li>Form elements can be disabled using the <span class="code">disabled</span> attribute; consider using this as part of your client-side validation </li>
+        </ul>
+        <h3>Chapter 12: Object Oriented Programming in JavaScript</h3>
+        <ul>
+            <li>Unlike other OOP languages, JS is a prototype-based language. Prototypes are created to base other similar objects on.</li>
+            <li>An example of creating an object using a constructor
+              <ul>
+                <li class="code">
+                  const object1 = function(){};<br>
+                  const object2 = new object1(); 
+                </li>
+              </ul>
+            </li>
+            <li>With the ES6 specification, classes can now be created in JS. Using classes is preferred to prototypes as they are strict by default</li>
+            <li>Classes can have static methods, like other OOP languages</li>
+            <li>Methods and properties can be added to classes and objects made from a constructor retroactively by using <span class="code">class.prototype</span></li>
+            <li>You can check for the prototype of an object using <span class="code">Object.getPrototypeOf()</span>, <span class="code">object.__proto__</span>, or <span class="code">Object.prototype.isPrototypeOf(object)</span></li>
+            <li>You can set the prototype of an object using <span class="code">Object.setPrototypeOf()</span> (don't know why you'd want to after the object is created, but maybe it's useful in some edge case)</li>
+            <li><span class="code">hasOwnProperty()</span> checks if the object has its own unique property</li>
+            <li>Prototypes cannot be overwritten if it was declared from a class, but can if it was from a constructor function</li>
+            <li>Use getters and setters for accessing private properties in classes in JS</li>
+            <li>To make a property or method private in JS, use a hashtag as the first character of that method or property (only part of ES2022, probably going to take a while before everyone is using it) or use <span class="code">let _property = value</span> inside a class constructor. Make sure not to write is as <span class="code">this.property</span> or it'll be publicly available.</li>
+            <li>Methods can either be enumerable or non-enumerable; by default, built-in functions are non-enumerable and won't show up as part of a <span class="code">for-in</span> loop. Enumerable functions will show up in a <span class="code">for-in</span> loop and user-defined functions are enumerable by default.</li>
+            <li>You can extend a class from another class by using the <span class="code">extends</span> keyword</li>
+            <li>When extending a class, <span class="code">super(propertyOrMethod)</span> accesses to the parent's properties or methods</li>
+            <li>You can overwrite built-in methods by declaring the method or property with the exact same name in your class</li>
+            <li>Methods and properties can be added to the built-in object prototype, and those values will be part of every object. This is called monkey-patching, but isn't best practice in JS</li>
+            <li>Monkey-patching can be used to add features that are missing in older browsers. You can check if a method or property exists, and if it doesn't overwrite it with a custom implementation</li>
+            <li>Alternatively, you can extend objects into your own custom classes.</li>
+            <li>Instead of using assignment for properties, you can use <span class="code">Object.defineProperty(object, 'propertyName', {writable: false, enumerable: false, value: 'value'});</span></li>
+            <li>Get and set methods of a property can be overwritten like C# <span class="code">Object.defineProperty(object, 'propertyName', {get() {}, set(value) {}});</span></li>
+            <li><span class="code">Object.create(prototype)</span> is another way to create objects from classes</li>
+            <li>Child prototypes can be created as objects like so
+              <ul>
+                <li class="code">
+                  const child = Object.create(parent);<br>
+                  child.name = “child”;
+                </li>
+              </ul>
+            </li>
+            <li>You can create a function to make it easier to create objects from a class. Remove the method from the object by calling <span class="code">this.methodName = undefined</span></li>
+            <li><span class="code">instanceOf()</span> does not work for objects created through classes, only constructor functions</li>
+            <li>Factory functions return an object</li>
+            <li>To chain functions, make sure it returns <span>this</span></li>
+            <li>You can copy methods from objects by assigning the method to a property</li>
+        </ul>
+        <h3>Chapter 15: Modern JavaScript </h3>
+        <h4>Modular JavaScript</h4>
+        <ul>
+            <li>Modules appear to work like small libraries</li>
+            <li>All modules are strict by default, and all modules have their own scope</li>
+            <li>To make a module, create a JS file with a collection of functions and properties. At the end of the file, add: <span class="code">export { method, property, etc }</span></li>
+            <li>To import properties or methods from a module use <span class="code">import {method, property} from 'module.js'</span></li>
+            <li>You can import the whole module with <span class="code">import * as name from 'module.js'</span></li>
+            <li>One module part can be exported by default by using <span class="code">export default</span></li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>No questions for this week. There was a lot of material this week, but I think I understand it all. My experience with C# is helping me greatly with my understanding of JS in the ES6 era.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
