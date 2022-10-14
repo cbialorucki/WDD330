@@ -12,20 +12,20 @@
         <h2>Notes</h2>
         <h3>Chapter 10: Testing and Debugging</h3>
         <ul>
-            <li>If you are writing your own JS code, it's a good idea to add the line <span>'use strict'</span> in the first line of the JS. If you are working on someone else's JS code, add the directive to each of your code blocks. Or use ES6 modules.</li>
+            <li>If you are writing your own JS code, it's a good idea to add the line <span class="code">'use strict'</span> in the first line of the JS. If you are working on someone else's JS code, add the directive to each of your code blocks. Or use ES6 modules.</li>
             <li>Linting tools can be used to check if your code meets a style guide and can highlight poor programming practices in your code.</li>
-            <li>Feature detection is used like so: <span>if(api.callYouWantToUse){}</span></li>
+            <li>Feature detection is used like so: <span class="code">if(api.callYouWantToUse){}</span></li>
             <li>UA strings are not recommended for feature detection (but still used by Google to discriminate against people who don't use their browser)</li>
-            <li>The <span>alert()</span> method is the traditional way to debug JS code</li>
-            <li>The <span>console</span> API is extremely useful and well supported, but not officially part of spec</li>
-            <li>The <span>debugger</span> keyword can be used to set breakpoints in most browsers</li>
-            <li>There are a variety of error objects, including <span>Error</span>, <span>EvalError</span> (depreciated), <span>RangeError</span>, <span>ReferenceError</span>, <span>SyntaxError</span>, <span>TypeError</span>, <span>URIError</span>, and <span>InternalError</span>.</li>
-            <li>The <span>throw</span> keyword throws an error; can technically be any object but best practice to throw an error object.</li>
-            <li>Exceptions can be handled with <span>try</span>/<span>catch</span> blocks.</li>
+            <li>The <span class="code">alert()</span> method is the traditional way to debug JS code</li>
+            <li>The <span class="code">console</span> API is extremely useful and well supported, but not officially part of spec</li>
+            <li>The <span class="code">debugger</span> keyword can be used to set breakpoints in most browsers</li>
+            <li>There are a variety of error objects, including <span class="code">Error</span>, <span class="code">EvalError</span> (depreciated), <span class="code">RangeError</span>, <span class="code">ReferenceError</span>, <span class="code">SyntaxError</span>, <span class="code">TypeError</span>, <span class="code">URIError</span>, and <span class="code">InternalError</span>.</li>
+            <li>The <span class="code">throw</span> keyword throws an error; can technically be any object but best practice to throw an error object.</li>
+            <li>Exceptions can be handled with <span class="code">try</span>/<span class="code">catch</span> blocks.</li>
             <li>Test cases should be written</li>
             <li>Test-driven Development is when test cases are written before the application code is written. It's best practice but not usually done</li>
-            <li>Jest is a JS test framework built by Facebook. To test your code, build xxx.test.js files and write your functions using <span>test('test title', () => {expect(apiCall()).toBe(result)});</span> [<span>.toEqual()</span> for arrays, can also do <span>.not.toBe(value)</span> and <span>.toThrow()</span> for errors]</li>
-            <li>To run the tests, go to the parent folder and run <span>jest -c {}</span></li>
+            <li>Jest is a JS test framework built by Facebook. To test your code, build xxx.test.js files and write your functions using <span class="code">test('test title', () => {expect(apiCall()).toBe(result)});</span> [<span class="code">.toEqual()</span> for arrays, can also do <span class="code">.not.toBe(value)</span> and <span class="code">.toThrow()</span> for errors]</li>
+            <li>To run the tests, go to the parent folder and run <span class="code">jest -c {}</span></li>
             <li>Refactor your code after fixing failed tests; red-green-refactor programming</li>
         </ul>
     </section>
