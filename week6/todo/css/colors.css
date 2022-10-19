@@ -6,6 +6,12 @@
     --plus-background: #063;
     --plus-background-hover: #0a5;
     --plus-foreground: #fff;
+    --icon-foreground: #000;
+    --icon-active: #fff;
+    --icon-hover: lightgray;
+    --delete-foreground: darkred;
+    --delete-hover: red;
+    --drop-shadow-color: darkgray;
 }
 
 @media (prefers-color-scheme: dark){
@@ -14,6 +20,10 @@
         --background-alt: #1c1c1c;
         --foreground: #fff;
         --selected-background: #5b5b60;
+        --icon-foreground: #fff;
+        --icon-active: #000;
+        --icon-hover: #5b5b60;
+        --drop-shadow-color: #000;
     }
     
 }

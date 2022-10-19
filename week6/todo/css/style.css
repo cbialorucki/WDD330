@@ -5,8 +5,7 @@
     margin: 0px;
     padding: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    appearance: none;
-    transition: background-color 250ms;
+    transition: all 250ms;
     user-select: none;
 }
 
@@ -52,14 +51,51 @@ li input[type="submit"]{
     border: 0px;
 }
 
-li input{
+li input[type="checkbox"]{
     display: none;
 }
 
-li:hover input, li.completed input{
-    display: inherit;
+li input[type="submit"]{
+    font-size: large;
     cursor: pointer;
-    appearance: initial;
+    color: transparent;
+}
+
+.styledCheckbox{
+    font-size: xx-large;
+    font-weight: 900;
+    color: transparent;
+    margin: auto 8px;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+li:hover .styledCheckbox{
+    color: var(--icon-hover);
+    display: initial;
+}
+
+li input[type="checkbox"]:active ~ .styledCheckbox{
+    color: var(--icon-active);
+    display: initial;
+}
+
+li input[type="checkbox"]:checked ~ .styledCheckbox{
+    color: var(--icon-foreground);
+    display: initial;
+}
+
+li:hover input[type="submit"]{
+    color: var(--icon-hover);
+}
+
+li:hover input[type="submit"]:hover{
+    color: var(--delete-hover);
+}
+
+
+li:hover input[type="submit"], li.completed input[type="submit"]{
+    display: inherit;
 }
 
 li.completed label{
@@ -97,6 +133,7 @@ footer section{
 
 .highlightLabel{
     background-color: var(--selected-background);
+    box-shadow: 1px 1px 3px var(--drop-shadow-color);
 }
 
 .labelGroup input{
@@ -110,7 +147,7 @@ footer{
 footer input[type="text"]{
     flex: 1;
     padding: 16px;
-    margin-right: 16px;
+    margin-right: 8px;
     border: none;
     height: 100%;
     background-color: var(--background-alt);
@@ -119,18 +156,23 @@ footer input[type="text"]{
 }
 
 footer button:hover{
-    background-color: var(--plus-background-hover);
+    background-color: var(--selected-background);
 }
 
 footer button{
-    color: var(--foreground);
-    background-color: var(--plus-background);
+    background-color: var(--background-alt);
     font-size: var(--plus-size);
-    border-radius: 50%;
+    border-radius: var(--default-radius);
     border: 0px;
     width: var(--submit-task-height);
     height: var(--submit-task-height);
     cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
 }
 
 header{
@@ -142,3 +184,25 @@ header{
     padding: 16px;
 }
 
+button:hover .horizontal-plus, button:hover .vertical-plus{
+    background-color: var(--plus-background-hover);
+}
+
+.horizontal-plus, .vertical-plus{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    margin: auto;
+    background-color: var(--plus-background);
+    border-radius: var(--default-radius);
+}
+
+.horizontal-plus{
+    width: 50%;
+    height: 10%;
+}
+    
+
+.vertical-plus{
+    height: 50%;
+    width: 10%;
+}

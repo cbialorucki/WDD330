@@ -1,5 +1,23 @@
 const TODO_LIST_KEY = "tasks";
 let tasks = window.localStorage.getItem(TODO_LIST_KEY)? JSON.parse(window.localStorage.getItem(TODO_LIST_KEY)) : [];
+setTaskNumber();
+
+function setTaskNumber()
+{
+    let numOfTasks = 0;
+    tasks.forEach(element => {
+        if(element[1] == false){
+            numOfTasks += 1;
+        }
+    });
+
+    if (numOfTasks == 1){
+        document.getElementById('tasksLeft').innerText = "1 task left";
+    }
+    else{
+        document.getElementById('tasksLeft').innerText = `${numOfTasks} tasks left`;
+    }
+}
 
 console.log(tasks);
 rebuildTodoList();
@@ -43,15 +61,21 @@ function _createTaskItem(taskName, isComplete = false, id = Date.now()){
         setCompletionStatus(taskName, checkbox.checked);
     };
 
+    const styleCheckbox = document.createElement('span');
+    styleCheckbox.innerText = "✓";
+    styleCheckbox.classList.add('styledCheckbox');
+
     const deleteButton = document.createElement('input');
     deleteButton.setAttribute('type', 'submit');
-    deleteButton.setAttribute('value', '❌');
+    deleteButton.setAttribute('value', '🗙');
+    deleteButton.setAttribute('title', 'Delete Task');
     deleteButton.onclick = function(){
         removeTaskFromList(taskName);
         this.parentNode.remove();
     };
 
     parent.appendChild(checkbox);
+    parent.appendChild(styleCheckbox);
     parent.appendChild(taskTitle);
     parent.appendChild(deleteButton);
 
