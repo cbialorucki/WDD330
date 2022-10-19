@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+        <h1>TO DO</h1>
+    </header>
+    <section class="labelGroup">
+        <label for="all" id="allLabel" class="highlightLabel">All</label>
+        <input id="all" type="radio" value="all" name="filterView" checked onchange="filterViewChanged(this)">
+        <label for="active" id="activeLabel">Active</label>
+        <input id="active" type="radio" value="active" name="filterView" onchange="filterViewChanged(this)">
+        <label for="completed" id="completedLabel">Completed</label>
+        <input id="completed" type="radio" value="completed" name="filterView" onchange="filterViewChanged(this)">
+    </section>
+    <ul id="taskList">
+    </ul>
+    <p id="tasksLeft">3 tasks left</p>
+    <footer>
+        <section>
+            <input id="taskText" type="text" placeholder="Type your task here...">
+            <button type="button" onclick="taskSubmit()" title="Add Task">+</button>
+        </section>
+        <!--<input id="taskSmt" type="submit" value="+" onclick="taskSubmit()"><div class="plus"></div></input>-->
+    </footer>
+  </body>
+  <script src="js/main.js"></script>
+</html>

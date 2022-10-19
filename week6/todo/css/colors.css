@@ -1,0 +1,19 @@
+:root{
+    --background: #fff;
+    --background-alt: #eee;
+    --foreground: #000;
+    --selected-background: #fff;
+    --plus-background: #063;
+    --plus-background-hover: #0a5;
+    --plus-foreground: #fff;
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --background: #000;
+        --background-alt: #1c1c1c;
+        --foreground: #fff;
+        --selected-background: #5b5b60;
+    }
+    
+}
