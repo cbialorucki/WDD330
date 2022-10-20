@@ -2,7 +2,17 @@ import * as CONST from './const.js';
 import ls from './ls.js';
 import util from './utilities.js';
 
+/**
+ * A class used to represent the list of tasks in the ToDo web application.
+ * @module ToDos
+ */
 export default class ToDos{
+    /**
+     * @constructor
+     * Constructs the ToDo object.
+     * @param {HTMLUListElement} list The list to insert each task view into.
+     * @param {HTMLParagraphElement} status The element used to notify the user how many tasks are left.
+     */
     constructor(list, status){
         this.htmlList = list;
         this.htmlStatus = status;
@@ -17,10 +27,21 @@ export default class ToDos{
         this.updateStatusText();
     }
 
+    /**
+     * Creates a task object
+     * @param {string} taskTitle The title of the task.
+     * @param {boolean} isComplete True if the task is complete, false if it is not.
+     * @returns {Object} The created task.
+     */
     _buildTaskObject(taskTitle, isComplete=false){
         return [Date.now(), taskTitle, isComplete]
     }
 
+    /**
+     * Used to create a task and update the HTML view.
+     * @param {string} taskTitle The title of the task.
+     * @param {boolean} isComplete True if the task is complete, false if it is not.
+     */
     createTask(taskTitle, isComplete=false){
         const task = this._buildTaskObject(taskTitle, isComplete)
         this.tasks.push(task);
@@ -28,6 +49,11 @@ export default class ToDos{
         this.htmlList.appendChild(util.buildTaskListItem(...task, this.setCompletetionOfTask.bind(this), this.deleteTask.bind(this)));
     }
 
+    /**
+     * Sets the completion status of a task.
+     * @param {number} taskId The ID of the task to manipulate.
+     * @param {boolean} isComplete True if the task is complete, false if it is not.
+     */
     setCompletetionOfTask(taskId, isComplete){
         this.tasks.forEach(item => {
             if(item[0] === taskId)
@@ -36,6 +62,10 @@ export default class ToDos{
         this.saveTasks();
     }
 
+    /**
+     * Deletes a task.
+     * @param {number} taskId The ID of the task to delete.
+     */
     deleteTask(taskId){
         this.tasks.forEach((item, index) => {
             if(item[0] === taskId)
@@ -44,11 +74,17 @@ export default class ToDos{
         this.saveTasks();
     }
 
+    /**
+     * Saves the current tasks to localStorage.
+     */
     saveTasks(){
         ls.writeToLS(CONST.TODO_LIST_KEY, this.tasks);
         this.updateStatusText();
     }
 
+    /**
+     * Updates the text status of how many tasks are remaining. 
+     */
     updateStatusText(){
         let numOfTasks = 0;
         this.tasks.forEach(element => {

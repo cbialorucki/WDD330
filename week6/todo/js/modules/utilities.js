@@ -1,20 +1,25 @@
 import ls from './ls.js';
 import * as CONST from './const.js';
 
+/**
+ * A class used to handle UI features as part of the ToDo application.
+ * @module utilities
+ */
 export default class utilities{
 
-    /*
-    * Handles the task submission UI elements
+    /**
+    * Handles the task submission UI elements.
     * 
-    * @param {string} key The key under which the value is stored under in LS
-    * @param {array} data The information to be stored as an array of objects.
+    * @param {HTMLButtonElement} taskSubmitButton The button used to submit the task.
+    * @param {HTMLInputElement} taskTextInput The input used to collect the task title.
+    * @param {CallableFunction} callback The callback used when a task title is valid and added.
     */
     static submitTaskUIHandler(taskSubmitButton, taskTextInput, callback){
         taskSubmitButton.onclick = submitTask;
-        taskTextInput.onkeypress = function(e){
+        taskTextInput.addEventListener("keypress", function(e){
             if(e.key === "Enter")
                 submitTask();
-        };
+        });
 
         function submitTask(){
             if(taskTextInput.value !== ""){
@@ -24,22 +29,22 @@ export default class utilities{
         }
     }
 
-    /*
-    * Handles the filtering UI elements
+    /**
+    * Handles the UI elements to filter tasks.
     * 
-    * @param {string} key The key under which the value is stored under in LS
-    * @param {array} data The information to be stored as an array of objects.
+    * @param {HTMLCollection} radioButtons The radio buttons used to filter between views.
+    * @param {HTMLUListElement} taskList The list where tasks are displayed.
     */
     static filterUIHandler(radioButtons, taskList){
         for(const radioButton of radioButtons){
             radioButton.addEventListener('change', setHighlight);
         }
 
+        // Sets the filter to the last selected option.
         if(ls.readFromLS(CONST.LAST_FILTER_KEY))
             changeSelection(ls.readFromLS(CONST.LAST_FILTER_KEY));
-        else{
+        else
             selectByIndex(0);
-        }
 
         function changeSelection(value){
             radioButtons.forEach((item, index) => {
@@ -92,12 +97,15 @@ export default class utilities{
         }
     }
 
-    /*
-    * Builds a view of a task item
+    /**
+    * Builds a view of a task item.
     * 
-    * @param {string} key The key under which the value is stored under in LS
-    * @param {array} data The information to be stored as an array of objects.
-    * @return {array} The value as an array of objects
+    * @param {number} taskId The ID associated with the task.
+    * @param {string} taskTitle The title of the task.
+    * @param {boolean} isComplete True if the task was completed, false if it was not.
+    * @param {CallableFunction} completeCallback The callback for when the task is completed.
+    * @param {CallableFunction} deleteCallback The callback for when the task is deleted.
+    * @return {HTMLLIElement} The list item view for the task.
     */
     static buildTaskListItem(taskId, taskTitle, isComplete = false, completeCallback = null, deleteCallback = null){
         const idForCheckbox = `task${taskId}`;

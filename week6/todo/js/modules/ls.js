@@ -1,5 +1,9 @@
+/**
+ * A class used to easily store and retrieve objects from localStorage
+ * @module localStorageHelper
+ */
 export default class localStorageHelper{
-    /*
+    /**
     * Read a value from local storage and parse it as JSON 
     *
     * @param {string} key The key under which the value is stored under in LS
@@ -9,7 +13,7 @@ export default class localStorageHelper{
         return localStorage.getItem(key)? JSON.parse(localStorage.getItem(key)) : null;
     }
 
-    /*
+    /**
     * Writes an array of objects to local storage under the provided key
     * 
     * @param {string} key The key under which the value is stored under in LS
