@@ -1,64 +1,60 @@
 @import "colors.css";
 @import "variables.css";
 
+/* || CSS RESET */
 *{
     margin: 0px;
     padding: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: all 250ms;
+    transition: all 350ms;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    outline: none;
+}
+
+p, h1, ul li *, label {
     user-select: none;
 }
 
+/* || BODY AND LIST STYLE */
 body{
-    width: 50%;
     margin: auto;
     color: var(--foreground);
     background-color: var(--background);
     display: grid;
-    grid-template-rows: auto auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
 
 ul{
     list-style: none;
     margin: 8px 0px;
-    border-radius: var(--default-radius);
     width: 100%;
 }
 
+/* || LIST ITEM STYLE */
 li{
     width: 100%;
     display: flex;
     border-radius: var(--default-radius);
 }
 
-li:hover{
-    background-color: var(--background-alt);
-}
-
 li *{
     padding: 8px;
     margin: 8px;
+    font-size: 18pt;
 }
 
 li label{
     flex: 1;
-    font-size: x-large;
 }
 
-li input[type="submit"]{
+li input{
+    color: transparent;
     background-color: transparent;
     border: 0px;
-}
-
-li input[type="checkbox"]{
-    display: none;
-}
-
-li input[type="submit"]{
-    font-size: large;
     cursor: pointer;
-    color: transparent;
+    display: none;
 }
 
 .styledCheckbox{
@@ -68,11 +64,6 @@ li input[type="submit"]{
     margin: auto 8px;
     margin-right: 0px;
     padding-right: 0px;
-}
-
-li:hover .styledCheckbox{
-    color: var(--icon-hover);
-    display: initial;
 }
 
 li input[type="checkbox"]:active ~ .styledCheckbox{
@@ -85,38 +76,27 @@ li input[type="checkbox"]:checked ~ .styledCheckbox{
     display: initial;
 }
 
-li:hover input[type="submit"]{
-    color: var(--icon-hover);
-}
-
-li:hover input[type="submit"]:hover{
-    color: var(--delete-hover);
-}
-
-
-li:hover input[type="submit"], li.completed input[type="submit"]{
-    display: inherit;
-}
-
 li.completed label{
     text-decoration: line-through;
 }
 
-header h1{
-    text-align: center;
+/* || HEADER */
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--background);
 }
 
-footer section{
+header h1{
     text-align: center;
-    margin: auto;
-    display: flex;
+    padding: 16px;
 }
 
 .labelGroup{
+    border: none;
     display: flex;
     background-color: var(--background-alt);
     border-radius: var(--default-radius);
-    user-select: none;
     text-align: center;
     margin-bottom: 8px;
 }
@@ -140,69 +120,143 @@ footer section{
     display: none;
 }
 
+/* || FOOTER */
 footer{
     margin: 8px 0px;
+    background-color: var(--background);
+    position: sticky;
+    bottom: 0;
+}
+
+footer p{
+    text-align: center;
+    padding: 8px;
+}
+
+footer div{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    background-color: var(--background-alt);
+    border-radius: var(--default-radius);
 }
 
 footer input[type="text"]{
     flex: 1;
     padding: 16px;
     margin-right: 8px;
-    border: none;
     height: 100%;
-    background-color: var(--background-alt);
+    background-color: transparent;
     color: var(--foreground);
-    border-radius: var(--default-radius);
-}
-
-footer button:hover{
-    background-color: var(--selected-background);
+    
 }
 
 footer button{
-    background-color: var(--background-alt);
-    font-size: var(--plus-size);
-    border-radius: var(--default-radius);
-    border: 0px;
+    background-color: transparent;
     width: var(--submit-task-height);
     height: var(--submit-task-height);
     cursor: pointer;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    vertical-align: middle;
-    justify-content: center;
+    grid-template: 1fr / 1fr;
+    border-radius: var(--default-radius);
 }
 
-header{
-    padding: 16px;
+footer label{
+    display: none;
 }
 
-#tasksLeft{
-    margin: auto;
-    padding: 16px;
-}
-
-button:hover .horizontal-plus, button:hover .vertical-plus{
-    background-color: var(--plus-background-hover);
-}
-
+/* || ADD ICON */
 .horizontal-plus, .vertical-plus{
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     margin: auto;
-    background-color: var(--plus-background);
+    background-color: var(--plus-color);
     border-radius: var(--default-radius);
 }
 
 .horizontal-plus{
-    width: 50%;
-    height: 10%;
+    width: var(--plus-size);
+    height: var(--plus-weight);
 }
     
-
 .vertical-plus{
-    height: 50%;
-    width: 10%;
+    height: var(--plus-size);
+    width: var(--plus-weight);
+}
+
+/* || HOVER AND ACTIVE STYLES */
+@media only screen and (hover: hover){
+    li:hover{
+        background-color: var(--background-alt);
+    }
+
+    li:hover input[type="submit"]{
+        color: var(--icon-hover);
+    }
+
+    li:hover input[type="submit"]:hover{
+        color: var(--delete-hover);
+    }
+
+    button:hover .horizontal-plus, button:hover .vertical-plus{
+        background-color: var(--plus-color-hover);
+    }
+
+    li:hover .styledCheckbox{
+        color: var(--icon-hover);
+        display: block;
+    }
+
+    li:hover input[type="submit"], li.completed input[type="submit"]{
+        display: block;
+    }    
+}
+
+@media only screen and (hover: none){
+    li input[type="submit"]{
+        color: var(--delete-hover);
+        display: block;
+    }
+}
+
+footer div button:active{
+    color: var(--foreground);
+    background-color: var(--selected-background);
+}
+
+button:active .horizontal-plus, button:active .vertical-plus{
+    background-color: var(--foreground);
+}
+
+/** || DESKTOP VIEW */
+@media only screen and (min-width: 801px){
+    body{
+        width: 50%;
+    }
+}
+
+/** || TABLET VIEW */
+@media only screen and (max-width: 900px) {
+    body{
+        width: 80%;
+    }
+}
+
+/** || PHONE VIEW */
+@media only screen and (max-width: 600px) {
+    body{
+        width: 100%;
+    }
+
+    footer{
+        margin: 0px;
+    }
+
+    footer div{
+        border-radius: 0px;
+    }
+
+    .labelGroup{
+        border-radius: 0px;
+    }
 }

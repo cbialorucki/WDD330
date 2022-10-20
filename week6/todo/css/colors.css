@@ -1,19 +1,19 @@
+/* || LIGHT MODE COLORS */
 :root{
     --background: #fff;
     --background-alt: #eee;
     --foreground: #000;
     --selected-background: #fff;
-    --plus-background: #063;
-    --plus-background-hover: #0a5;
-    --plus-foreground: #fff;
+    --plus-color: #063;
+    --plus-color-hover: #0a5;
     --icon-foreground: #000;
     --icon-active: #fff;
     --icon-hover: lightgray;
-    --delete-foreground: darkred;
     --delete-hover: red;
     --drop-shadow-color: darkgray;
 }
 
+/* || DARK MODE COLORS */
 @media (prefers-color-scheme: dark){
     :root{
         --background: #000;

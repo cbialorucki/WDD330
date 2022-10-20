@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todos</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
         <h1>TO DO</h1>
+        <fieldset class="labelGroup">
+          <label for="all" id="allLabel">All</label>
+          <input id="all" type="radio" value="all" name="filterView">
+          <label for="active" id="activeLabel">Active</label>
+          <input id="active" type="radio" value="active" name="filterView">
+          <label for="completed" id="completedLabel">Completed</label>
+          <input id="completed" type="radio" value="completed" name="filterView">
+        </fieldset>
     </header>
-    <section class="labelGroup">
-        <label for="all" id="allLabel">All</label>
-        <input id="all" type="radio" value="all" name="filterView">
-        <label for="active" id="activeLabel">Active</label>
-        <input id="active" type="radio" value="active" name="filterView">
-        <label for="completed" id="completedLabel">Completed</label>
-        <input id="completed" type="radio" value="completed" name="filterView">
-    </section>
     <ul id="taskList">
     </ul>
-    <p id="tasksLeft">3 tasks left</p>
     <footer>
-        <section>
-            <input id="taskText" type="text" placeholder="Type your task here...">
-            <button id="submitTask" type="button" title="Add Task">
-                <div class="horizontal-plus"></div>
-                <div class="vertical-plus"></div>
-            </button>
-        </section>
+      <p id="tasksLeft">3 tasks left</p>
+      <div>
+        <label for="taskText">Task Text</label>
+        <input id="taskText" type="text" placeholder="Type your task here...">
+        <button id="submitTask" type="button" title="Add Task">
+          <span class="horizontal-plus"></span>
+          <span class="vertical-plus"></span>
+        </button>
+      </div>
     </footer>
+    <script src="js/main.js" type="module"></script>
   </body>
-  <script src="js/main.js" type="module"></script>
 </html>

@@ -46,7 +46,9 @@ export default class ToDos{
         const task = this._buildTaskObject(taskTitle, isComplete)
         this.tasks.push(task);
         this.saveTasks();
-        this.htmlList.appendChild(util.buildTaskListItem(...task, this.setCompletetionOfTask.bind(this), this.deleteTask.bind(this)));
+        const taskView = util.buildTaskListItem(...task, this.setCompletetionOfTask.bind(this), this.deleteTask.bind(this))
+        this.htmlList.appendChild(taskView);
+        taskView.scrollIntoView();
     }
 
     /**
