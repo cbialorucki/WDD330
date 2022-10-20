@@ -11,12 +11,12 @@
         <h1>TO DO</h1>
     </header>
     <section class="labelGroup">
-        <label for="all" id="allLabel" class="highlightLabel">All</label>
-        <input id="all" type="radio" value="all" name="filterView" checked onchange="filterViewChanged(this)">
+        <label for="all" id="allLabel">All</label>
+        <input id="all" type="radio" value="all" name="filterView">
         <label for="active" id="activeLabel">Active</label>
-        <input id="active" type="radio" value="active" name="filterView" onchange="filterViewChanged(this)">
+        <input id="active" type="radio" value="active" name="filterView">
         <label for="completed" id="completedLabel">Completed</label>
-        <input id="completed" type="radio" value="completed" name="filterView" onchange="filterViewChanged(this)">
+        <input id="completed" type="radio" value="completed" name="filterView">
     </section>
     <ul id="taskList">
     </ul>
@@ -24,13 +24,12 @@
     <footer>
         <section>
             <input id="taskText" type="text" placeholder="Type your task here...">
-            <button type="button" onclick="taskSubmit()" title="Add Task">
+            <button id="submitTask" type="button" title="Add Task">
                 <div class="horizontal-plus"></div>
                 <div class="vertical-plus"></div>
             </button>
         </section>
-        <!--<input id="taskSmt" type="submit" value="+" onclick="taskSubmit()"><div class="plus"></div></input>-->
     </footer>
   </body>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" type="module"></script>
 </html>
