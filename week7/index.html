@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <h1>Week 7: Further Functions and AJAX</h1>
+    <section>
+        <h2>Notes</h2>
+        <h3>Chapter 11: Further Functions</h3>
+        <ul>
+            <li>Methods can have their this property changed to another object by calling the function with the <span class="code">call(newThis, …params)</span> method.</li>
+            <li>Custom properties can be added to methods like any other object in JS.</li>
+            <li>As a consequence of the above two features, we can add a cache property to a method to cache the results of a calculation.</li>
+            <li>JS has a feature called Immediately Invoked Function Expressions (IIFEs) where a function can be defined and immediately executed. This can be used to create a function without defining new global variables.</li>
+            <li>IIFEs can be used to program temporary variables, since variables cannot be dereferenced without disposing of the entire scope.</li>
+            <li>With ES6, you can make code blocks. Variables in a code block are in their own scope, and are destroyed when the scope is destroyed.</li>
+            <li>'use strict' can be used in IIFEs.</li>
+            <li>Functions can be redefined within themselves, usually used to change a functions behavior after it is run for the first time. This is needed often as part of a function that utilizes feature checking.</li>
+            <li>Recursive functions are available</li>
+            <li>JS is single-threaded, but callbacks are asynchronous</li>
+            <li>Async functions can be wrapped in a <span class="code">Promise</span> object, were the function either resolves or rejects. When a Promise is rejected or resolves, it returns a value.</li>
+            <li>Calling the <span class="code">then()</span> method on a promise object can control code flow depending on if it was resolved or rejected. The <span class="code">catch()</span> method sets the code to run in case of a rejection only.</li>
+            <li>Async/await exists in JS and works similarly to C#.</li>
+            <li>Use callbacks to reduce the number of unique functions in your program.</li>
+            <li>Functions can return functions.</li>
+            <li>Variables have block scope in JS, as we've already talked about.</li>
+            <li>When a function is returned from another function and stored in a variable, the parent function and all children functions are stored in that variable, along with any variables used within the parent or child functions.</li>
+            <li>In JS, iterators are called generators. They are defined by adding an asterisk immediately after function keyword (no spaces.) Yield results like C#.</li>
+            <li>JS doesn't have a strict coding style, and can be used with OO, functional, and procedural programming styles.</li>
+            <li>Returning a function based off of an input can simplify your code when using a functional programming approach</li>
+            <li>Currying is when a function is called without all required arguments, so the function returns a function; saving the arguments passed into it and requiring the missing arguments to run.</li>
+            <li>A function can be written to automatically curry a function, saving you from hard-coding currying instructions on every function.</li>
+        </ul>
+        <h3>Chapter 13: AJAX</h3>
+        <ul>
+            <li>The <span class="code">fetch()</span> method is a global promise object used to get a response from a URL.</li>
+            <li>The <span class="code">Response</span> object returned from <span class="code">fetch()</span> has an ok property where if true, it got an HTTP code of 200-299. Needed for checking for 404s and other status codes.</li>
+            <li><span class="code">Response</span> also has the properties of <span class="code">headers</span>, <span class="code">url</span>, <span class="code">redirected</span>, and <span class="code">type</span>.</li>
+            <li><span class="code">Response</span> objects can format the data they received with the following methods
+                <ul>
+                    <li><span class="code">response.text()</span> gets the data returned when fetching the url as a string.</li>
+                    <li><span class="code">response.blob()</span> gets binary data from the URL, returns after the data is downloaded.</li>
+                    <li><span class="code">response.json()</span> gets data and converts it into a JS object, assuming it's JSON data.</li>
+                </ul>
+            </li>
+            <li>Response objects can be created using a constructor function, can be used for testing or building APIs.</li>
+            <li><span class="code">Request</span> objects can give you more control over how to fetch data from a URL, and has the following properties
+                <ul>
+                    <li>url</li>
+                    <li>method</li>
+                    <li>headers</li>
+                    <li>mode</li>
+                    <li>cache</li>
+                    <li>credentials</li>
+                    <li>redirect</li>
+                    <li>body</li>
+                </ul>
+            </li>
+            <li><span class="code">Headers</span> objects are used to make HTTP headers as part of a fetch request.</li>
+            <li>Data can also be sent using the fetch api using a request object, the data to send will be the body property.</li>
+            <li>A <span class="code">FormData</span> object creates an object automatically from all the form data in a form.</li>
+            <li><span class="code">FormData</span> objects handle file uploads very well.</li>
+            <li>jQuery is a common JS library.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>No questions this week. Being able to craft your own response objects gives me intresting ideas for a personal project.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
