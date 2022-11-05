@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <h1>Week 8: Transforms, Transitions, Canvas, and SVG</h1>
+    <section>
+        <h2>Notes</h2>
+        <h3>Chapter 8: Transforms and Transitions</h3>
+        <ul>
+            <li><span class="code">transform: translate(x, y)</span> – Moves an element relative to its current position</li>
+            <li>OR you can use <span class="code">translateX()</span> and <span class="code">translateY()</span></li>
+            <li><span class="code">transform: scale(x,y)</span> – Scales an element</li>
+            <li>OR you can use <span class="code">scaleX()</span> and <span class="code">scaleY()</span></li>
+            <li>Multiple transform declarations override each other, chain your transformation properties with a space-separated list</li>
+            <li><span class="code">transform</span> has no impact on document layout</li>
+            <li><span class="code">transform: rotate(deg)</span> – Rotates an element</li>
+            <li><span class="code">transform: skew(x, y)</span> – Skews an element</li>
+            <li><span class="code">transform-origin: x y</span> – Changes the point where transformations occur on object</li>
+            <li><span class="code">transition</span> has several properties, that I'm already familiar with</li>
+            <li>visibility: visible/hidden can be transitioned, but not display:none</li>
+            <li>Must specify transition-duration for transitions to display</li>
+            <li><span class="code">transition-timing-function</span> lets you ease transitions</li>
+            <li><span class="code">transition-delay</span> lets you set a delay</li>
+            <li>Negative delays can be used to start a transition part-way through</li>
+            <li>CSS animations have support for keyframes, has some weird syntax. Read more <a href="https://www.w3schools.com/css/css3_animations.asp" title="CSS3 Animations">here</a></li>
+            <li>CSS animations can be reversed easily</li>
+        </ul>
+        <h3>Chapter 12: Canvas, SVG, and Drag and Drop</h3>
+        <ul>
+            <li>In HTML5, the width and height of canvas must be set in HTML. CSS height/width will be ignored.</li>
+            <li>Canvas is a powerful tool that allows JS to draw to it. You need to grab a context object from canvas to draw to it.</li>
+            <li>Drawing an arc in a canvas requires you to use radians, because Apple</li>
+            <li>Canvas can be used to programmatically alter images and video</li>
+            <li>Changing the height or width of a canvas will clear its contents, because Apple</li>
+            <li>SVG is supported in HTML5</li>
+            <li>They use a 3rd party library to animate an SVG. Not interested.</li>
+            <li>Canvas is faster, SVG is more accessible</li>
+            <li>HTML5 supports drag and drop, syntax is too complicated to explain here. Basically, you link drag events together and get data from the object from the arguments.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>No questions for this week.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
