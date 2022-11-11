@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <h1>Week 9: The Window Object and HTML5</h1>
+    <section>
+        <h2>Notes</h2>
+        <h3>Chapter 9: The Window Object</h3>
+        <ul>
+            <li>The <span class="code">window</span> object in JS gives information about the browser. The methods and properties about the browser are also said to be part of the Browser Object Model.</li>
+            <li>In JS, when working outside of the browser, there likely is a global object that works similarly to window.</li>
+            <li>Properties and methods that are built into JS are part of the global object, as are any globally defined properties or methods.</li>
+            <li>By using the global object, you can avoid reference errors if a property is not defined.</li>
+            <li><span class="code">alert()</span>, <span class="code">confirm()</span>, and <span class="code">prompt()</span> are used to show a messagebox.</li>
+            <li>UA strings are now deprecated, but will likely continue to be supported for forever.</li>
+            <li><span class="code">window.location</span> contains info about the current page, including href</li>
+            <li><span class="code">window.history</span> contains info about pages backwards and forwards in the browser.</li>
+            <li><span class="code">window.history.go()</span> can be used to programmatically navigate the user forwards, backwards, or refresh the page.</li>
+            <li><span class="code">window.open()</span> is used to open a tool window as part of a webapp.</li>
+            <li><span class="code">window.screen</span> will give the resolution of the display or the size of the browser window.</li>
+            <li><span class="code">window.document</span> is the JS DOM object.</li>
+            <li>Using <span class="code">window.document.cookie</span>, JS can append to, update, or read cookies.</li>
+            <li>Cookie can be assigned an expiry date, by default lasts until tab is closed. Can set domain of a cookie also to access cookies in subdomains.</li>
+            <li>Cookies can be set to only transmit over HTTPS by using the <span class="code">secure</span> attribute. Cookies can be deleted by setting the expiry date in the past.</li>
+            <li><span class="code">window.setTimeout</span> calls a function after a timeout, can be cancelled with <span class="code">clearTimeout()</span></li>
+            <li><span class="code">window.setInterval</span> calls a function repeatedly every time interval specified.</li>
+        </ul>
+        <h3>Chapter 14: HTML5 APIs</h3>
+        <ul>
+            <li>HTML attributes that begin with <span class="code">data-</span> are ignored by the browser and can easily be accessed with JS.</li>
+            <li><span class="code">localStorage</span> can be used to store information on the client permentantly, and <span class="code">sessionStorage</span> can be used to store information for the duration of the state.</li>
+            <li><span class="code">navigator.geolocation</span> gets geo data.</li>
+            <li><span class="code">Worker()</span> can be used to create threads from separate JS files.</li>
+            <li>Service workers can be used to add offline functionality to your app and send push notifications.</li>
+            <li>Websockets are often used for two-way communication, or push messaging.</li>
+            <li>When metadata for a video has been loaded, a <span class="code">loadedmetadata</span> event is fired.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>No questions for this week.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
