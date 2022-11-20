@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10 | CJ's WDD 330 Portfolio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <h1>Week 10: Validating Forms and Using Fetch</h1>
+    <section>
+        <h2>Notes</h2>
+        <h3>MDN: Validating Forms</h3>
+        <ul>
+            <li>Always validate input on the server side, AND the client side.</li>
+            <li>Built-in form validation has been extremely important in the development of the modern web; use built-in validation when possible.</li>
+            <li>Built-in form validation comes out of the HTML5 standard, and I largely documented this last week. You can use regular expressions, basic min/max, required, step, etc.</li>
+            <li><span class="code">textarea</span> doesn't support regex without custom JS</li>
+            <li>JS lets you handle invalid data differently from the built-in functionality. You can check if an input is valid by calling <span class="code">HTMLElement.validity</span>; Has a variety of enums for different reasons why the element is invalid.</li>
+            <li>Use constraint validation API to customize visual validity errors. Using <span class="code">novalidate</span> will prevent the browser's default visual validity from displaying, use your own JS to set your own visual indicators.</li>
+            <li>For custom controls (for example, a calendar) you will need to validate the control yourself. </li>
+        </ul>
+        <h3>MDN: Using Fetch</h3>
+        <ul>
+            <li>Use include to include cookies, credentials with a <span class="code">fetch()</span></li>
+            <li>CORS is very restrictive, when disabling CORS you are unable to include very much</li>
+            <li>Files can be uploaded using <span class="code">fetch()</span> and <span class="code">FormData</span>.</li>
+            <li>Custom headers can be crafted for <span class="code">fetch()</span> requests by using the <span class="code">Headers</span> object.</li>
+            <li>Fetch promises return a <span class="code">Response</span> object, which contains a <span class="code">Body</span> object which contains the data.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Questions</h2>
+        <ul>
+          <li>No questions for this week.</li>
+        </ul>
+    </section>
+    
+  </body>
+</html>
