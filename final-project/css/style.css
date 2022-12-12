@@ -95,6 +95,18 @@ h2{
     font-weight: bold;
 }
 
+.uploadButton{
+    border-radius: 5px;
+    background-color: var(--background-alt);
+    color: var(--foreground-alt);
+    border: none;
+    cursor: pointer;
+}
+
+.uploadButton:hover{
+    background-color: var(--background);
+}
+
 /** || DESKTOP VIEW */
 @media only screen and (min-width: 980px){
     body{

@@ -22,7 +22,7 @@ export default class utilities{
         const viewInfo = document.createElement("p");
         const viewInfo2 = document.createElement("p");
 
-        vidLink.setAttribute("href", `/final-project/watch.html?v=${videoId}`);
+        vidLink.setAttribute("href", `watch.html?v=${videoId}`);
         container.setAttribute("class", "videoDisplaySum");
         image.setAttribute("src", vidObj.thumbnail);
         title.innerText = vidObj.title;
