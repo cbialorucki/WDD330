@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - Play</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav>
+        <a href="/final-project/"><h1>Play</h1></a>
+        <form method="get" action="/final-project/search.html">
+          <input id="searchNav" name="q" type="search" placeholder="Search">
+          <input type="submit">
+        </form>
+        <button>Upload</button>
+    </nav>
+    <div id="navSpacer"></div>
+    <div class="videoContainer">
+      <video id="mainVideo" controls autoplay>
+        <p>Sorry, your browser does not support HTML5 video.</p>
+      </video>
+      <h2 id="videoTitle">Video Title</h2>
+      <section class="videoDescBox">
+          <p><span id="viewInfo">X views</span> | <span id="uploadDate">Published Y</span></p>
+          <p id="videoDesc">Description</p>
+      </section>
+    </div>
+    <section id="recommends"></section>
+    
+  </body>
+  <script src="js/mainWatch.js" type="module"></script>
+</html>

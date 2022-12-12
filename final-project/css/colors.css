@@ -1,0 +1,31 @@
+/* || LIGHT MODE COLORS */
+:root{
+    --background: #fff;
+    --background-alt: #eee;
+    --foreground: #000;
+    --foreground-alt: #333;
+    --selected-background: #fff;
+    --plus-color: #063;
+    --plus-color-hover: #0a5;
+    --icon-foreground: #000;
+    --icon-active: #fff;
+    --icon-hover: lightgray;
+    --delete-hover: red;
+    --drop-shadow-color: darkgray;
+}
+
+/* || DARK MODE COLORS */
+@media (prefers-color-scheme: dark){
+    :root{
+        --background: #000;
+        --background-alt: #1c1c1c;
+        --foreground: #fff;
+        --foreground-alt: #ddd;
+        --selected-background: #5b5b60;
+        --icon-foreground: #fff;
+        --icon-active: #000;
+        --icon-hover: #5b5b60;
+        --drop-shadow-color: #000;
+    }
+    
+}
