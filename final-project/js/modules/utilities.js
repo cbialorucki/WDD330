@@ -75,4 +75,22 @@ export default class utilities{
      static setPageTitle(title){
         document.title = `${title} - Play`;
     }
+
+    /**
+    * Populates a video watch page with the correct information.
+    * 
+    * @param {Array} currentVideo The current video object for the page.
+    * @param {HTMLElement} videoHTML The HTML video element.
+    * @param {HTMLElement} videoTitleHTML The HTML video title element.
+    * @param {HTMLElement} viewInfoHTML The HTML span element for describing the number of views on the video.
+    * @param {HTMLElement} uploadDateHTML The HTML span element describing when the video was uploaded.
+    * @param {HTMLElement} descHTML The HTML p element for the video description.
+    */
+     static setVideoInfo(currentVideo, videoHTML, videoTitleHTML, viewInfoHTML, uploadDateHTML, descHTML){
+        videoHTML.setAttribute("src", currentVideo.source);
+        videoTitleHTML.innerText = currentVideo.title;
+        viewInfoHTML.innerText = `${this.getViewFormat(currentVideo.views)} views`;
+        uploadDateHTML.innerText = `Published ${currentVideo.uploaded.toLocaleDateString()}`;
+        descHTML.innerText = currentVideo.desc;
+    }
 }

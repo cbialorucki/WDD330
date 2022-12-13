@@ -1,25 +1,17 @@
 import * as CONST from './modules/const.js';
 import util from './modules/utilities.js';
 
+const headerNav = document.getElementById("headerNav");
+
+fetch("common/header.html")
+.then((result) => { return result.text(); })
+.then((content) => { headerNav.innerHTML = content; });
+
 const currentVideoID = util.getQuery("v");
 const currentVideo = CONST.ALL_VIDEOS[currentVideoID];
 
 util.setPageTitle(currentVideo.title);
-
-const mainVideo = document.getElementById("mainVideo");
-mainVideo.setAttribute("src", currentVideo.source);
-
-const htmlTitle = document.getElementById("videoTitle");
-htmlTitle.innerText = currentVideo.title;
-
-const viewInfo = document.getElementById("viewInfo");
-viewInfo.innerText = `${util.getViewFormat(currentVideo.views)} views`;
-
-const uploadDate = document.getElementById("uploadDate");
-uploadDate.innerText = `Published ${currentVideo.uploaded.toLocaleDateString()}`;
-
-const htmlDesc = document.getElementById("videoDesc");
-htmlDesc.innerText = currentVideo.desc;
+util.setVideoInfo(currentVideo, document.getElementById("mainVideo"), document.getElementById("videoTitle"), document.getElementById("viewInfo"), document.getElementById("uploadDate"), document.getElementById("videoDesc"));
 
 const recommendsHTML = document.getElementById("recommends");
 CONST.ALL_VIDEO_IDs.forEach(element => {
