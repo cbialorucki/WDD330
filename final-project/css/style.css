@@ -140,6 +140,7 @@ h2{
     border: none;
     margin: 0px;
     padding: 8px 16px;
+    cursor: pointer;
 }
 
 .navSearchButton img{
