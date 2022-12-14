@@ -13,6 +13,21 @@ html{
     box-sizing: border-box;
 }
 
+a:visited, a:link{
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 350ms;
+}
+
+a:hover{
+    opacity: 1;
+    transition: all 350ms;
+}
+
+.hideLabel{
+    display: none;
+}
+
 /** || NAVIGATION BAR */
 nav{
     background-color: var(--background-alt);

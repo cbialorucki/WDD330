@@ -23,6 +23,7 @@ export default class utilities{
         vidLink.setAttribute("href", `watch.html?v=${videoId}`);
         container.setAttribute("class", "videoDisplaySum");
         image.setAttribute("src", vidObj.thumbnail);
+        image.setAttribute("alt", "");
         title.innerText = vidObj.title;
         viewInfo.innerText = `${utilities.getViewFormat(vidObj.views)} views`;
         viewInfo2.innerText = `${vidObj.uploaded.toLocaleDateString()}`;
@@ -57,6 +58,7 @@ export default class utilities{
         vidLink.setAttribute("href", `watch.html?v=${videoId}`);
         container.setAttribute("class", "videoDisplayHomeSum");
         image.setAttribute("src", vidObj.thumbnail);
+        image.setAttribute("alt", "");
         title.innerText = vidObj.title;
         viewInfo.innerText = `${utilities.getViewFormat(vidObj.views)} views | Uploaded ${vidObj.uploaded.toLocaleDateString()}`;
         title.setAttribute("class", "videoTitleHomeSum");
