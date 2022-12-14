@@ -13,6 +13,7 @@ html{
     box-sizing: border-box;
 }
 
+/** || LINK AND ACCESSIBILITY FIXES */
 a:visited, a:link{
     text-decoration: none;
     opacity: 0.8;
