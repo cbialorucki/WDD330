@@ -1,6 +1,7 @@
 @import "colors.css";
 @import "variables.css";
 
+/** || CSS RESET */
 html{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--background);
@@ -12,12 +13,7 @@ html{
     box-sizing: border-box;
 }
 
-video{
-    display: block;
-    width: 95%;
-    margin: 16px auto;
-}
-
+/** || NAVIGATION BAR */
 nav{
     background-color: var(--background-alt);
     padding: 0px 16px;
@@ -49,51 +45,6 @@ nav a{
 
 #navSpacer{
     height: 80px;
-}
-
-h2{
-    margin: 16px;
-    display: inline;
-}
-
-.videoDescBox{
-    background-color: var(--background-alt);
-    color: var(--foreground);
-    padding: 8px 16px;
-    border-radius: var(--default-radius);
-    margin: 16px;
-}
-
-#viewInfo, #uploadDate{
-    font-weight: bold;
-}
-
-.videoDisplaySum{
-    display: flex;
-    margin: 16px;
-    color: var(--foreground);
-    text-decoration: none;
-    font-size: small;
-}
-
-.videoDisplaySum img{
-    height: 100px;
-    width: 178px;
-    border-radius: var(--default-radius);
-    flex-shrink: 0;
-}
-
-.textVideoRec{
-    padding: 8px;
-    margin: auto 8px;
-    color: var(--foreground-alt);
-    font-size: 10pt;
-}
-
-.videoRecTitle{
-    color: var(--foreground);
-    font-size: 11pt;
-    font-weight: bold;
 }
 
 .uploadButton{
@@ -147,9 +98,95 @@ h2{
     width: 18px;
 }
 
+/** || WATCH PAGE */
+video{
+    display: block;
+    width: 95%;
+    margin: 16px auto;
+}
+
+h2{
+    margin: 16px;
+    display: inline;
+}
+
+.videoDescBox{
+    background-color: var(--background-alt);
+    color: var(--foreground);
+    padding: 8px 16px;
+    border-radius: var(--default-radius);
+    margin: 16px;
+}
+
+#viewInfo, #uploadDate{
+    font-weight: bold;
+}
+
+/** || HOME PAGE VIDEO RESULT DISPLAY */
+.videoDisplayHomeSum{
+    display: block;
+    margin: 16px;
+    color: var(--foreground-alt);
+    text-decoration: none;
+    text-align: center;
+}
+
+.videoDisplayHomeSum img{
+    height: 200px;
+    width: 355px;
+    border-radius: var(--default-radius);
+    flex-shrink: 0;
+}
+
+.videoTitleHomeSum{
+    font-weight: bold;
+    font-size: medium;
+    color: var(--foreground);
+}
+
+.homeResults{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+}
+
+/** || WATCH AND SEARCH PAGE VIDEO RESULT DISPLAY */
+.videoDisplaySum{
+    display: flex;
+    margin: 16px;
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: small;
+}
+
+.videoDisplaySum img{
+    height: 100px;
+    width: 178px;
+    border-radius: var(--default-radius);
+    flex-shrink: 0;
+}
+
+.textVideoRec{
+    padding: 8px;
+    margin: auto 8px;
+    color: var(--foreground-alt);
+    font-size: 10pt;
+}
+
+.videoRecTitle{
+    color: var(--foreground);
+    font-size: 11pt;
+    font-weight: bold;
+}
+
 /** || DESKTOP VIEW */
 @media only screen and (min-width: 980px){
-    body{
+    .homeBody{
+        margin: auto;
+    }
+
+    .watchBody{
         display: grid;
         grid-template-columns: 2fr 1fr;
     }
@@ -161,7 +198,7 @@ h2{
 
 /** || PHONE VIEW */
 @media only screen and (max-width: 600px) {
-    body{
+    .watchBody{
         width: 100%;
     }
 
@@ -175,5 +212,25 @@ h2{
 
     .labelGroup{
         border-radius: 0px;
+    }
+
+    .homeResults{
+        text-align: center;
+    }
+
+    .homeResults a{
+        margin: 16px auto;
+    }
+
+    nav form{
+        margin: 6px 8%;
+        flex-grow: 1;
+        text-align: center;
+        display: flex;
+    }
+
+    .videoDisplayHomeSum img{
+        height: 150px;
+        width: 267px;
     }
 }
