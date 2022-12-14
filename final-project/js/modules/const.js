@@ -29,7 +29,7 @@
     },
     "ehukpdse8_w": {
         title: "WDD 330 Portfolio Overview",
-        desc: "Thanks for taking a look at my portfolio! I hope it contains all the information and work you need to assign my grade. If there is any issues, please let me know. The grade I recieve in this class is extremely important to me.\n\n-CJ Bialorucki",
+        desc: "Thanks for taking a look at my portfolio! I hope it contains all the information and work you need to assign my grade. If there is any issues, please let me know. The grade I recieve in this class is very important to me.\n\n-CJ Bialorucki",
         thumbnail: "images/ehukpdse8_w-tn.png",
         uploaded: new Date(1671056889000),
         views: 2,
